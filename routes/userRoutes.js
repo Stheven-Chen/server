@@ -4,7 +4,7 @@ const User = require('../models/user');
 const Absen = require('../models/absen');
 
 
-router.post('/users', async (req, res, next) => {
+router.get('/users', async (req, res, next) => {
   try {
     const users = await User.find({}, { nama:1, user:1 , _id:0});
     res.json(users);
